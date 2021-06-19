@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 開発言語
+* Ruby2.6.5
+* Rails5.2.5
 
-Things you may want to cover:
+# 就業Termの技術
+* device
+* Vue.js
 
-* Ruby version
+# カリキュラム外の技術
+* Impressionist
+* Redcarpet
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+git clone 
