@@ -29,7 +29,7 @@ https://docs.google.com/spreadsheets/d/1n_jxMg2J-RunjPvhK_Pl6mYUV49wdfxpLSEiRAOn
 https://cacoo.com/diagrams/XdzG4YYkLCnU7XME/BFAB2
 
 # ER図
-![image](https://user-images.githubusercontent.com/62267330/122756232-1ce99500-d2d1-11eb-81c5-53944ea19f8d.png)
+![image](https://user-images.githubusercontent.com/62267330/122756315-3a1e6380-d2d1-11eb-8920-1ea2faf85d2a.png)
 https://cacoo.com/diagrams/mJWQ2DbSAzkuyNQd/A804A
 
 # 画面遷移図
