@@ -29,9 +29,9 @@ https://docs.google.com/spreadsheets/d/1n_jxMg2J-RunjPvhK_Pl6mYUV49wdfxpLSEiRAOn
 https://cacoo.com/diagrams/XdzG4YYkLCnU7XME/BFAB2
 
 # ER図
-![image](https://user-images.githubusercontent.com/62267330/122630156-ca577f80-d0fc-11eb-8025-936d778dacac.png)
+![image](https://user-images.githubusercontent.com/62267330/122756038-d5fb9f80-d2d0-11eb-8b3d-8e536a81e9e5.png)
 https://cacoo.com/diagrams/mJWQ2DbSAzkuyNQd/A804A
 
 # 画面遷移図
-![image](https://user-images.githubusercontent.com/62267330/122630177-ef4bf280-d0fc-11eb-94e9-7672cbaaaafb.png)
+![image](https://user-images.githubusercontent.com/62267330/122756073-e3b12500-d2d0-11eb-84c2-576c36d31e96.png)
 https://cacoo.com/diagrams/mJWQ2DbSAzkuyNQd/A804A
