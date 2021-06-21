@@ -6,7 +6,7 @@
 
 # 就業Termの技術
 * device
-* Vue.js
+* Vue.js（マイページのポップアップウィンドウやリアルタイム検索の機能実装）
 
 # カリキュラム外の技術
 * Impressionist
