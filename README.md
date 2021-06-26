@@ -24,14 +24,13 @@ rails s
 https://docs.google.com/spreadsheets/d/1n_jxMg2J-RunjPvhK_Pl6mYUV49wdfxpLSEiRAOnNrA/edit?usp=sharing
 
 # テーブル定義書
-![image](https://user-images.githubusercontent.com/62267330/123506945-cfd73b80-d6a1-11eb-90d6-eacece347c42.png)
+https://docs.google.com/spreadsheets/d/1n_jxMg2J-RunjPvhK_Pl6mYUV49wdfxpLSEiRAOnNrA/edit?usp=sharing
 
 # ワイヤーフレーム
 https://cacoo.com/diagrams/XdzG4YYkLCnU7XME/BFAB2
 
 # ER図
-![image](https://user-images.githubusercontent.com/62267330/122756315-3a1e6380-d2d1-11eb-8920-1ea2faf85d2a.png)
-https://cacoo.com/diagrams/mJWQ2DbSAzkuyNQd/A804A
+![image](https://user-images.githubusercontent.com/62267330/123506958-e5e4fc00-d6a1-11eb-9c73-dda5686a4b1e.png)
 
 # 画面遷移図
 ![image](https://user-images.githubusercontent.com/62267330/122756073-e3b12500-d2d0-11eb-84c2-576c36d31e96.png)
