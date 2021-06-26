@@ -24,7 +24,7 @@ rails s
 https://docs.google.com/spreadsheets/d/1n_jxMg2J-RunjPvhK_Pl6mYUV49wdfxpLSEiRAOnNrA/edit?usp=sharing
 
 # テーブル定義書
-https://docs.google.com/spreadsheets/d/1n_jxMg2J-RunjPvhK_Pl6mYUV49wdfxpLSEiRAOnNrA/edit?usp=sharing
+![image](https://user-images.githubusercontent.com/62267330/123506945-cfd73b80-d6a1-11eb-90d6-eacece347c42.png)
 
 # ワイヤーフレーム
 https://cacoo.com/diagrams/XdzG4YYkLCnU7XME/BFAB2
