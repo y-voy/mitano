@@ -205,9 +205,15 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  notice:
+    article_create: 記事を投稿しました！
+    article_update: 記事を更新しました！
   view:
     article_index_view: 記事一覧
+    article_new_view: 新規投稿
     article_show_view: 記事詳細
+    article_edit_view: 記事編集
     to_aticle_index_view: 記事一覧へ戻る
-    to_article_show_view: 詳細
     to_article_new_view: 投稿する
+    to_article_show_view: 詳細
+    to_article_edit_view: 編集

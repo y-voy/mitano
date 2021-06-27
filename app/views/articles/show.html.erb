@@ -2,4 +2,5 @@
 <p><%= t('activerecord.attributes.article.title') %>: <%= @article.title %></p>
 <p><%= t('activerecord.attributes.article.content') %>: <%= @article.content %></p>
 
+<%= link_to t('view.to_article_edit_view'), edit_article_path(@article.id) %>
 <%= link_to t('view.to_aticle_index_view'), articles_path %>
