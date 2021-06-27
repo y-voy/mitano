@@ -1,0 +1,15 @@
+<h1>記事</h1>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.content %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '記事作成画面', new_article_path %>
