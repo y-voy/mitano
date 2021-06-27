@@ -3,4 +3,5 @@
 <p><%= t('activerecord.attributes.article.content') %>: <%= @article.content %></p>
 
 <%= link_to t('view.to_article_edit_view'), edit_article_path(@article.id) %>
+<%= link_to t('view.to_article_destroy_view'), article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') } %>
 <%= link_to t('view.to_aticle_index_view'), articles_path %>
