@@ -2,7 +2,7 @@
 
 <% if @article.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
+      <h2><%= @article.errors.count %><%= t('errors.messages.error_count') %></h2>
       <ul>
       <% @article.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -22,4 +22,4 @@
   <%= form.submit %>
 <% end %>
 
-<%= link_to '記事一覧画面に戻る', articles_path %>
+<%= link_to t('view.to_aticle_index_view'), articles_path %>

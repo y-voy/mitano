@@ -1,16 +1,16 @@
-<h1>記事</h1>
+<h1><%= t('view.article_index_view') %></h1>
 <table>
   <tr>
-    <th>タイトル</th>
-    <th>内容</th>
+    <th><%= t('activerecord.attributes.article.title') %></th>
+    <th><%= t('activerecord.attributes.article.content') %></th>
   </tr>
 <% @articles.each do |article| %>
   <tr>
     <td><%= article.title %></td>
     <td><%= article.content %></td>
-    <td><%= link_to '詳細を確認する', article_path(article.id) %></td>
+    <td><%= link_to t('view.to_article_show_view'), article_path(article.id) %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to '記事作成画面', new_article_path %>
+<%= link_to t('view.to_article_new_view'), new_article_path %>
