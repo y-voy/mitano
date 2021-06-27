@@ -9,8 +9,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    Article.create(article_params)
-    redirect_to articles_path
+    @article = Article.new(article_params)
+    if @article.save
+      redirect_to articles_path, notice: "ブログを作成しました"
+    else
+      render :new
+    end
   end
 
   def show
