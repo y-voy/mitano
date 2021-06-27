@@ -1,0 +1,9 @@
+<h3><%= t('view.article_confirm_view') %></h3>
+<%= form_with(model: @article, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <p><%= t('activerecord.attributes.article.title') %>:<%= @article.title %></p>
+  <p><%= t('activerecord.attributes.article.content') %>:<%= @article.content %></p>
+  <%= form.submit t('submit.article_submit')%>
+  <%= form.submit t('submit.article_back'), name: 'back'%>
+<% end %>

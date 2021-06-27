@@ -211,11 +211,15 @@ ja:
     article_destroy: 記事を削除しました！
     confirm_edit: 本当に編集してもいいですか？
     confirm_destroy: 本当に削除してもいいですか？
+  submit:
+    article_submit: 投稿する
+    article_back: 戻る
   view:
     article_index_view: 記事一覧
     article_new_view: 新規投稿
     article_show_view: 記事詳細
     article_edit_view: 記事編集
+    article_confirm_view: 以下の内容で投稿する
     to_aticle_index_view: 記事一覧へ戻る
     to_article_new_view: 投稿する
     to_article_show_view: 詳細

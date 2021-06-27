@@ -10,12 +10,21 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def confirm
+    @article = Article.new(article_params)
+    render :new if @article.invalid?
+  end
+
   def create
     @article = Article.new(article_params)
-    if @article.save
-      redirect_to articles_path, notice: t("notice.article_create")
-    else
+    if params[:back]
       render :new
+    else
+      if @article.save
+        redirect_to articles_path, notice: t("notice.article_create")
+      else
+        render :new
+      end
     end
   end
 
