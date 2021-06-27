@@ -18,9 +18,14 @@ group :development, :test do
 end
 
 group :development do
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails'
   gem 'web-console', '>= 3.3.0'
 end
 
@@ -28,6 +33,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
