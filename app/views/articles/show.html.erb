@@ -1,6 +1,6 @@
 <h1><%= t('view.article_show_view') %></h1>
-<p><%= t('activerecord.attributes.article.title') %>: <%= @article.title %></p>
-<p><%= t('activerecord.attributes.article.content') %>: <%= @article.content %></p>
+<p><%= t('activerecord.attributes.article.title') %>: <%= markdown(@article.title) %></p>
+<p><%= t('activerecord.attributes.article.content') %>: <%= markdown(@article.content) %></p>
 
 <%= link_to t('view.to_article_edit_view'), edit_article_path(@article.id) %>
 <%= link_to t('view.to_article_destroy_view'), article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') } %>

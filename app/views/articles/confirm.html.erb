@@ -2,8 +2,8 @@
 <%= form_with(model: @article, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  <p><%= t('activerecord.attributes.article.title') %>:<%= @article.title %></p>
-  <p><%= t('activerecord.attributes.article.content') %>:<%= @article.content %></p>
+  <p><%= t('activerecord.attributes.article.title') %>:<%= markdown(@article.title) %></p>
+  <p><%= t('activerecord.attributes.article.content') %>:<%= markdown(@article.content) %></p>
   <%= form.submit t('submit.article_submit')%>
   <%= form.submit t('submit.article_back'), name: 'back'%>
 <% end %>
