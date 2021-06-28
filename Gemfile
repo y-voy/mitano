@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'
+gem 'devise'
+gem 'devise-i18n'
 gem 'jbuilder', '~> 2.5'
 gem 'rails', '~> 5.2.5'
 gem 'redcarpet'
@@ -22,6 +24,7 @@ group :development do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
+  gem 'letter_opener_web'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-commands-rspec'
