@@ -10,21 +10,33 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <li><%= link_to t('view.article_new_view'), new_article_path %></li>
-    <li><%= link_to t('view.to_article_new_view'), new_article_path %></li>
-    <li><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></li>
-  <% else %>
-    <li><%= link_to t('view.login'), new_user_session_path %></li>
-    <li><%= link_to t('view.sign_up'), new_user_registration_path %></li>
-    <li><%= link_to t('view.to_aticle_index_view'), articles_path %></li>
-  <% end %>
-  <% if notice %>
-  <p class="alert alert-notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-  <p class="alert alert-error"><%= alert %></p>
-  <% end %>
-    <%= yield %>
+    <div class="container">
+    <% if user_signed_in? %>
+    <div class="row">
+      <li class="col-md-4"><%= link_to t('view.article_new_view'), new_article_path %></li>
+      <li class="col-md-4"><%= link_to t('view.to_article_new_view'), new_article_path %></li>
+      <li class="col-md-4"><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></li>
+    </div>
+    <% else %>
+    <div class="row">
+      <li class="col-md-4"><%= link_to t('view.login'), new_user_session_path %></li>
+      <li class="col-md-4"><%= link_to t('view.sign_up'), new_user_registration_path %></li>
+      <li class="col-md-4"><%= link_to t('view.to_aticle_index_view'), articles_path %></li>
+    </div>
+    <% end %>
+    <% if notice %>
+    <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+      <%= yield %>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    </div>
   </body>
 </html>
