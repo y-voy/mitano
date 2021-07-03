@@ -33,19 +33,26 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    unless @article.user_id == current_user.id
+      redirect_to articles_path, notice: "自分以外の投稿は編集できません"
+    end
   end
 
   def update
     if @article.update(article_params)
-      redirect_to articles_path, notice: t("notice.article_update")
+      redirect_to articles_path
     else
       render :edit
     end
   end
 
   def destroy
-    @article.destroy
-    redirect_to articles_path, notice: t("notice.article_destroy")
+    if @article.user_id == current_user.id
+      @article.destroy
+      redirect_to articles_path, notice: t("notice.article_destroy")
+    else
+      redirect_to articles_path
+    end
   end
 
   private
