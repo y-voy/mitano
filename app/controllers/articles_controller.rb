@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :confirm, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -11,12 +12,12 @@ class ArticlesController < ApplicationController
   end
 
   def confirm
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
     render :new if @article.invalid?
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
     if params[:back]
       render :new
     else

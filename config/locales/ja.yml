@@ -215,6 +215,9 @@ ja:
     article_submit: 投稿する
     article_back: 戻る
   view:
+    logout: ログアウト
+    login: ログイン
+    sign_up: サインアップ
     article_index_view: 記事一覧
     article_new_view: 新規投稿
     article_show_view: 記事詳細

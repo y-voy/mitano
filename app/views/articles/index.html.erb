@@ -1,12 +1,13 @@
-<p><%= notice %></p>
 <h1><%= t('view.article_index_view') %></h1>
 <table>
   <tr>
+    <th><%= t('activerecord.attributes.user.name') %></th>
     <th><%= t('activerecord.attributes.article.title') %></th>
     <th><%= t('activerecord.attributes.article.content') %></th>
   </tr>
 <% @articles.each do |article| %>
   <tr>
+    <td><%= article.user.name %></td>
     <td><%= markdown(article.title) %></td>
     <td><%= markdown(article.content) %></td>
     <td><%= link_to t('view.to_article_show_view'), article_path(article.id) %></td>
@@ -15,5 +16,3 @@
   </tr>
 <% end %>
 </table>
-
-<%= link_to t('view.to_article_new_view'), new_article_path %>
