@@ -2,8 +2,19 @@
 <p><%= t('activerecord.attributes.article.title') %>: <%= markdown(@article.title) %></p>
 <p><%= t('activerecord.attributes.article.content') %>: <%= markdown(@article.content) %></p>
 
-<% if @article.user_id == current_user.id %>
-  <%= link_to t('view.to_article_edit_view'), edit_article_path(@article.id) %>
-  <%= link_to t('view.to_article_destroy_view'), article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') } %>
+<% if user_signed_in? %>
+  <% if @article.user_id == current_user.id %>
+    <%= link_to t('view.to_article_edit_view'), edit_article_path(@article.id) %>
+    <%= link_to t('view.to_article_destroy_view'), article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') } %>
+  <% end %>
+
+  <% unless @article.user_id == current_user.id %>
+    <% if @like.present? %>
+      <%= link_to t('action.undo_like'), like_path(id: @like.id), method: :delete %>
+    <% else %>
+      <%= link_to t('action.do_like'), likes_path(article_id: @article.id), method: :post %>
+    <% end %>
+  <% end %>
 <% end %>
+
 <%= link_to t('view.to_aticle_index_view'), articles_path %>

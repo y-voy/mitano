@@ -211,6 +211,9 @@ ja:
     article_destroy: 記事を削除しました！
     confirm_edit: 本当に編集してもいいですか？
     confirm_destroy: 本当に削除してもいいですか？
+  action:
+    do_like: 「いいね」
+    undo_like: 「いいね」を解除
   submit:
     article_submit: 投稿する
     article_back: 戻る

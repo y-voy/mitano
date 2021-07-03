@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @like = current_user.likes.find_by(article_id: @article.id) if user_signed_in?
   end
 
   def edit
