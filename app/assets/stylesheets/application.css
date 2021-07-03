@@ -14,3 +14,10 @@
  *= require bootstrap/dist/css/bootstrap.min
  *= require_self
  */
+
+
+.yield {
+  /* margin-top: 10px; */
+  /* margin: 0 auto; */
+  /* width: 1000px; */
+}
