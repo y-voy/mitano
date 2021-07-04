@@ -211,9 +211,13 @@ ja:
     article_destroy: 記事を削除しました！
     confirm_edit: 本当に編集してもいいですか？
     confirm_destroy: 本当に削除してもいいですか？
+    do_like: さんの投稿に「いいね」をしました
+    undo_like: さんの投稿の「いいね」を解除しました
   action:
     do_like: 「いいね」
     undo_like: 「いいね」を解除
+    do_stock: ストック
+    undo_stock: ストック解除
   submit:
     article_submit: 投稿する
     article_back: 戻る
@@ -231,3 +235,4 @@ ja:
     to_article_show_view: 詳細
     to_article_edit_view: 編集
     to_article_destroy_view: 削除
+    stock_index_view: ストック一覧
