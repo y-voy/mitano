@@ -218,9 +218,11 @@ ja:
     undo_like: 「いいね」を解除
     do_stock: ストック
     undo_stock: ストック解除
+    delete_comment: 削除
   submit:
     article_submit: 投稿する
     article_back: 戻る
+    comment_submit: 投稿
   view:
     logout: ログアウト
     login: ログイン
@@ -237,3 +239,6 @@ ja:
     to_article_destroy_view: 削除
     user_index_view: ユーザ一覧
     stock_index_view: ストック一覧
+    comment_index_view: コメント一覧
+    comment_new_view: コメント投稿
+    comment_count: 件コメント
