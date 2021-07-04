@@ -235,4 +235,5 @@ ja:
     to_article_show_view: 詳細
     to_article_edit_view: 編集
     to_article_destroy_view: 削除
+    user_index_view: ユーザ一覧
     stock_index_view: ストック一覧

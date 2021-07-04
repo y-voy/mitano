@@ -14,10 +14,11 @@
     <% if user_signed_in? %>
     <div class="row">
       <li class="col-md-2"><%= link_to t('view.to_aticle_index_view'), articles_path %></li>
-      <li class="col-md-2"><%= link_to t('view.article_new_view'), new_article_path %></li>
       <li class="col-md-2"><%= link_to t('view.stock_index_view'), stocks_path %></li>
+      <li class="col-md-2"><%= link_to t('view.user_index_view'), users_path %></li>
       <li class="col-md-2"><%= link_to t('view.to_article_new_view'), new_article_path %></li>
       <li class="col-md-2"><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></li>
+      <li class="col-md-2"><%=  current_user.name %></li>
     </div>
     <% else %>
     <div class="row">
