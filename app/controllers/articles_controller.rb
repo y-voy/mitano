@@ -32,6 +32,8 @@ class ArticlesController < ApplicationController
   def show
     @like = current_user.likes.find_by(article_id: @article.id) if user_signed_in?
     @stock = current_user.stocks.find_by(article_id: @article.id) if user_signed_in?
+    @comment = Comment.new
+    @comments = @article.comments.order(created_at: :desc)
   end
 
   def edit
