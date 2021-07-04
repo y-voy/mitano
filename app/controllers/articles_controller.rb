@@ -31,11 +31,12 @@ class ArticlesController < ApplicationController
 
   def show
     @like = current_user.likes.find_by(article_id: @article.id) if user_signed_in?
+    @stock = current_user.stocks.find_by(article_id: @article.id) if user_signed_in?
   end
 
   def edit
     unless @article.user_id == current_user.id
-      redirect_to articles_path, notice: "自分以外の投稿は編集できません"
+      redirect_to articles_path
     end
   end
 
