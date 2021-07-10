@@ -1,5 +1,9 @@
 class LikesController < ApplicationController
 
+  def index
+    @articles = Article.joins(:likes).group(:id).order("count(*) desc")    
+  end
+
   def create
     like = current_user.likes.create(article_id: params[:article_id])
     redirect_to articles_url, notice: "#{like.article.user.name}さんの投稿に「いいね」をしました"

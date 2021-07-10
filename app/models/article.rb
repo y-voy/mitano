@@ -23,4 +23,5 @@ class Article < ApplicationRecord
   def stock?(current_user)
     self.stock(current_user).present?
   end
+
 end

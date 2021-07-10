@@ -244,3 +244,5 @@ ja:
     comment_count: 件コメント
     to_following_index_view: お気に入りユーザ一覧
     following_index_view: お気に入りユーザ一覧
+    like_index_view: いいねランキング
+    to_like_index_view: いいねランキング
