@@ -11,7 +11,6 @@
 # カリキュラム外の技術
 * Impressionist
 * Redcarpet
-* Vue.js（検索やマイページポップアップへの適用）
 
 ```
 git clone git@github.com:y-voy/mitano.git
