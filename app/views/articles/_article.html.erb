@@ -8,6 +8,7 @@
       <td><%= link_to t('view.to_article_edit_view'), edit_article_path(article.id), data: { confirm: t('notice.confirm_edit') } %></td>
       <td><%= link_to t('view.to_article_destroy_view'), article_path(article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') } %></td>
     <% end %>
+    <td><%= article.likes.count %></td>
     <% unless article.user_id == current_user.id %>
         <% if article.like?(current_user) %>
           <td><%= link_to t('action.undo_like'), like_path(id: article.like(current_user).id), method: :delete %></td>
