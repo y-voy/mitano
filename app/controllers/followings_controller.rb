@@ -1,6 +1,11 @@
 class FollowingsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    users = Following.where(follower_id: current_user.id).pluck(:followed_id)
+    @users = User.find(users)
+  end
+
   respond_to? :js
   def create
     @user = User.find(params[:following][:followed_id])

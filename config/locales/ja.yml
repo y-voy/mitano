@@ -242,3 +242,5 @@ ja:
     comment_index_view: コメント一覧
     comment_new_view: コメント投稿
     comment_count: 件コメント
+    to_following_index_view: お気に入りユーザ一覧
+    following_index_view: お気に入りユーザ一覧

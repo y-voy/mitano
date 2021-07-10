@@ -5,5 +5,5 @@
     <th><%= t('activerecord.attributes.article.title') %></th>
     <th><%= t('activerecord.attributes.article.content') %></th>
   </tr>
-  <%= render @articles %>
+  <%= render partial: 'articles/article', collection: @articles %>
 </table>
