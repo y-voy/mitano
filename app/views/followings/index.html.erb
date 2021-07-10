@@ -1,0 +1,14 @@
+<h2><%= t('view.following_index_view') %></h2>
+<table>
+  <tr>
+    <th><%= t('activerecord.attributes.user.name') %></th>
+    <th><%= t('activerecord.attributes.user.email') %></th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= link_to "記事一覧", user_articles_path(user_id: user.id) %></td>
+  </tr>
+  <% end %>
+</table>

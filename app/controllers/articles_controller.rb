@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :confirm, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.includes([:likes, :stocks])
   end
 
   def new

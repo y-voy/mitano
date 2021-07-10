@@ -1,0 +1,24 @@
+<tr>
+  <td><%= article.user.name %></td>
+  <td><%= markdown(article.title) %></td>
+  <td><%= markdown(article.content) %></td>
+  <td><%= link_to t('view.to_article_show_view'), article_path(article.id) %></td>
+  <% if user_signed_in? %>
+    <% if article.user_id == current_user.id %>
+      <td><%= link_to t('view.to_article_edit_view'), edit_article_path(article.id), data: { confirm: t('notice.confirm_edit') } %></td>
+      <td><%= link_to t('view.to_article_destroy_view'), article_path(article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') } %></td>
+    <% end %>
+    <% unless article.user_id == current_user.id %>
+        <% if article.like?(current_user) %>
+          <td><%= link_to t('action.undo_like'), like_path(id: article.like(current_user).id), method: :delete %></td>
+        <% else %>
+          <td><%= link_to t('action.do_like'), likes_path(article_id: article.id), method: :post %></td>
+        <% end %>
+        <% if article.stock?(current_user) %>
+          <td><%= link_to t('action.undo_stock'), stock_path(id: article.stock(current_user).id), method: :delete %></td>
+        <% else %>
+          <td><%= link_to t('action.do_stock'), stocks_path(article_id: article.id), method: :post %></td>
+        <% end %>
+    <% end %>
+  <% end %>
+</tr>
