@@ -7,4 +7,20 @@ class Article < ApplicationRecord
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user
   has_many :comments, dependent: :destroy
+
+  def like(current_user)
+    self.likes.find { |like| like.user_id == current_user.id }
+  end
+
+  def like?(current_user)
+    self.like(current_user).present?
+  end
+
+  def stock(current_user)
+    self.stocks.find { |stock| stock.user_id == current_user.id }
+  end
+
+  def stock?(current_user)
+    self.stock(current_user).present?
+  end
 end
