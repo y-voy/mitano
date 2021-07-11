@@ -2,8 +2,12 @@
 <%= form_with(model: @article, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :tag_ids, multiple: true %>
   <p><%= t('activerecord.attributes.article.title') %>:<%= markdown(@article.title) %></p>
   <p><%= t('activerecord.attributes.article.content') %>:<%= markdown(@article.content) %></p>
+  <% @article.tags.each do |tag| %>
+    <p><%= tag.name %></p>
+  <% end %>
   <%= form.submit t('submit.article_submit')%>
   <%= form.submit t('submit.article_back'), name: 'back'%>
 <% end %>

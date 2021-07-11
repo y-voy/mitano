@@ -7,6 +7,8 @@ class Article < ApplicationRecord
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user
   has_many :comments, dependent: :destroy
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings, source: :tag
 
   def like(current_user)
     self.likes.find { |like| like.user_id == current_user.id }
