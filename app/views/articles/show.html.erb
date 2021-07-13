@@ -1,6 +1,9 @@
 <h1><%= t('view.article_show_view') %></h1>
 <p><%= t('activerecord.attributes.article.title') %>: <%= markdown(@article.title) %></p>
 <p><%= t('activerecord.attributes.article.content') %>: <%= markdown(@article.content) %></p>
+<% @article.tags.each do |tag| %>
+  <p><%= tag.name %></p>
+<% end %>
 
 <% if user_signed_in? %>
   <% if @article.user_id == current_user.id %>

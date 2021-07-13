@@ -19,5 +19,13 @@
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
+
+  <div class="input task_label">
+    <% Tag.all.each do |tag| %>
+    <%= form.check_box :tag_ids, { multiple: true, checked: tag[:checked], disabled: tag[:disabled], include_hidden: false }, tag[:id], class: "input-form", id: "task_label_field" %>
+    <label><%= tag.name %></label>
+    <% end %>
+  </div>
+
   <%= form.submit %>
 <% end %>

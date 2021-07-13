@@ -2,6 +2,9 @@
   <td><%= article.user.name %></td>
   <td><%= markdown(article.title) %></td>
   <td><%= markdown(article.content) %></td>
+  <% article.tags.each do |tag| %>
+    <th><%= tag.name %></th>
+  <% end %>
   <td><%= link_to t('view.to_article_show_view'), article_path(article.id) %></td>
   <% if user_signed_in? %>
     <% if article.user_id == current_user.id %>

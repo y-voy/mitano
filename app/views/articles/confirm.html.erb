@@ -4,6 +4,10 @@
   <%= form.hidden_field :content %>
   <p><%= t('activerecord.attributes.article.title') %>:<%= markdown(@article.title) %></p>
   <p><%= t('activerecord.attributes.article.content') %>:<%= markdown(@article.content) %></p>
+  <% @article.tags.each do |tag| %>
+  <%= form.hidden_field :tag_ids, value: tag.id, multiple: true %>
+    <p><%= tag.name %></p>
+  <% end %>
   <%= form.submit t('submit.article_submit')%>
   <%= form.submit t('submit.article_back'), name: 'back'%>
 <% end %>
