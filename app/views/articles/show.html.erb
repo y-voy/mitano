@@ -2,7 +2,7 @@
 <p><%= t('activerecord.attributes.article.title') %>: <%= markdown(@article.title) %></p>
 <p><%= t('activerecord.attributes.article.content') %>: <%= markdown(@article.content) %></p>
 <% @article.tags.each do |tag| %>
-  <p><%= tag.name %></p>
+  <p><%= link_to tag.name, tag_articles_path(tag_id: tag.id) %></p>
 <% end %>
 
 <% if user_signed_in? %>
