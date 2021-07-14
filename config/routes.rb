@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
+  resources :tags, only: [:index] do
+    resources :articles, only: [:index], controller: 'tags/articles'
+  end
   resources :likes, only: [:index, :create, :destroy]
   resources :stocks, only: [:index, :create, :destroy]
   resources :followings, only: [:index, :create, :destroy]

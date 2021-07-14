@@ -3,7 +3,7 @@
   <td><%= markdown(article.title) %></td>
   <td><%= markdown(article.content) %></td>
   <% article.tags.each do |tag| %>
-    <th><%= tag.name %></th>
+    <th><%= link_to tag.name, tag_articles_path(tag_id: tag.id) %></th>
   <% end %>
   <td><%= link_to t('view.to_article_show_view'), article_path(article.id) %></td>
   <% if user_signed_in? %>
