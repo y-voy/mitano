@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :confirm, :edit, :update, :destroy]
+  impressionist :actions=>[:show]
 
   def index
     @articles = Article.all.includes([:likes, :stocks])
