@@ -38,7 +38,9 @@
 
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.text_field :image %>
+    <%= image_tag(current_user.image.url) if current_user.image && current_user.image.url %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
   </div>
 
   <div class="field">

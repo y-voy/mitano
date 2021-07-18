@@ -21,7 +21,8 @@ r<!DOCTYPE html>
       <li class="col-md-1"><%= link_to t('view.impressions_ranking_view'), impressions_path %></li>
       <li class="col-md-1"><%= link_to t('view.to_article_new_view'), new_article_path %></li>
       <li class="col-md-1"><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></li>
-      <li class="col-md-1"><%=  current_user.name %></li>
+      <li class="col-md-1"><%= image_tag current_user.image.url, class: "icon_image" %></li>
+      <li class="col-md-1"><%= link_to current_user.name, edit_user_registration_path %></li>
     </div>
     <% else %>
     <div class="row">
