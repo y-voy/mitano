@@ -1,0 +1,9 @@
+<h1><%= t('view.impressions_ranking_view') %></h1>
+<table>
+  <tr>
+    <th><%= t('activerecord.attributes.user.name') %></th>
+    <th><%= t('activerecord.attributes.article.title') %></th>
+    <th><%= t('activerecord.attributes.article.content') %></th>
+  </tr>
+  <%= render partial: 'articles/article', collection: @articles %>
+</table>

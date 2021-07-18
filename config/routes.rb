@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :tags, only: [:index] do
     resources :articles, only: [:index], controller: 'tags/articles'
   end
+  resources :impressions, only: [:index]
   resources :likes, only: [:index, :create, :destroy]
   resources :stocks, only: [:index, :create, :destroy]
   resources :followings, only: [:index, :create, :destroy]
