@@ -1,5 +1,9 @@
 <tr>
-  <td><%= image_tag article.user.image.url, class: "article_icon_image" if article.user.image && article.user.image.url %></td>
+  <%  if article.user.image && article.user.image.url %>
+  <td><%= image_tag article.user.image.url, class: "article_icon_image" %></td>
+  <% else %>
+  <td><%= image src=default_url, class: "article_icon_image" %></td>
+  <% end %>
   <td><%= article.user.name %></td>
   <td><%= markdown(article.title) %></td>
   <td><%= markdown(article.content) %></td>

@@ -5,7 +5,11 @@ class ArticlesController < ApplicationController
   impressionist :actions=>[:show]
 
   def index
-    @articles = Article.all.includes([:likes, :stocks])
+    if params[:article].present?
+      @articles = Article.where('title LIKE ?', "%#{params[:article][:content]}%").or(Article.where('content LIKE ?', "%#{params[:article][:content]}%")).includes([:likes, :stocks, :tags])
+    else
+      @articles = Article.all.includes([:likes, :stocks])
+    end
   end
 
   def new
