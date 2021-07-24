@@ -12,6 +12,8 @@
   <% end %>
 
   <% unless @article.user_id == current_user.id %>
+  <% user = @article.user %>
+    <%= render 'users/follow_form', user: user %>
     <% if @like.present? %>
       <%= link_to t('action.undo_like'), like_path(id: @like.id), method: :delete %>
     <% else %>

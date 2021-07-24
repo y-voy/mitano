@@ -19,6 +19,8 @@
     <td><%= article.likes.count %></td>
     <td><%= article.impressions_count %></td>
     <% unless article.user_id == current_user.id %>
+    <% user = article.user %>
+    <td><%= render 'users/follow_form', user: user %></td>
         <% if article.like?(current_user) %>
           <td><%= link_to t('action.undo_like'), like_path(id: article.like(current_user).id), method: :delete %></td>
         <% else %>
