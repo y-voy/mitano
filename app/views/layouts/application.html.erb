@@ -1,4 +1,4 @@
-r<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Mitano</title>
@@ -10,31 +10,67 @@ r<!DOCTYPE html>
   </head>
 
   <body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a><%= link_to "Brand", articles_path, class: "navbar-brand" %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <!-- ログイン時 -->
+        <li><a><%= link_to t('view.to_article_new_view'), new_article_path, class:"new_article" %></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <%  if current_user.image && current_user.image.url %>
+            <%= image_tag current_user.image.url, class: "icon_image" %>
+            <% else %>
+            <%= image_tag "default.png", class: "icon_image" %>
+            <% end %>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a><%= link_to t('view.stock_index_view'), stocks_path %></a></li>
+            <li><a><%= link_to t('view.user_index_view'), users_path %></a></li>
+            <li><a><%= link_to t('view.to_following_index_view'), followings_path %></a></li>
+            <li><a><%= link_to t('view.to_like_index_view'), likes_path %></a></li>
+            <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path %></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a><%= link_to current_user.name, edit_user_registration_path %></a></li>
+            <li><a><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></a></li>
+          </ul>
+        </li>
+        <!-- ログイン時 -->
+        <% else %>
+        <!-- ログアウト時 -->
+        <li><a><%= link_to t('view.login'), new_user_session_path %></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag "default.png", class: "icon_image" %>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a><%= link_to t('view.to_like_index_view'), likes_path %></a></li>
+            <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path %></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a><%= link_to t('view.sign_up'), new_user_registration_path %></a></li>
+          </ul>
+        </li>
+        <!-- ログアウト時 -->
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
     <div class="container">
-    <% if user_signed_in? %>
-    <div class="row">
-      <li class="col-md-1"><%= link_to t('view.to_aticle_index_view'), articles_path %></li>
-      <li class="col-md-1"><%= link_to t('view.stock_index_view'), stocks_path %></li>
-      <li class="col-md-1"><%= link_to t('view.user_index_view'), users_path %></li>
-      <li class="col-md-1"><%= link_to t('view.to_following_index_view'), followings_path %></li>
-      <li class="col-md-1"><%= link_to t('view.to_like_index_view'), likes_path %></li>
-      <li class="col-md-1"><%= link_to t('view.impressions_ranking_view'), impressions_path %></li>
-      <li class="col-md-1"><%= link_to t('view.to_article_new_view'), new_article_path %></li>
-      <li class="col-md-1"><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></li>
-      <%  if current_user.image && current_user.image.url %>
-      <li class="col-md-1"><%= image_tag current_user.image.url, class: "icon_image" %></li>
-      <% else %>
-      <li class="col-md-1"><%= image src=default_url, class: "icon_image" %></li>
-      <% end %>
-      <li class="col-md-1"><%= link_to current_user.name, edit_user_registration_path %></li>
-    </div>
-    <% else %>
-    <div class="row">
-      <li class="col-md-4"><%= link_to t('view.login'), new_user_session_path %></li>
-      <li class="col-md-4"><%= link_to t('view.sign_up'), new_user_registration_path %></li>
-      <li class="col-md-4"><%= link_to t('view.to_aticle_index_view'), articles_path %></li>
-    </div>
-    <% end %>
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
@@ -42,11 +78,9 @@ r<!DOCTYPE html>
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
     <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
+      <div class="col-md-10 col-md-offset-1">
       <%= yield %>
       </div>
-      <div class="col-md-1"></div>
     </div>
     </div>
   </body>

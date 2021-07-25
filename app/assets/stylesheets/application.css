@@ -21,3 +21,7 @@
   border-radius: 20px;
   object-fit: cover;
 }
+
+.new_article {
+  font-size: 15px;
+}
