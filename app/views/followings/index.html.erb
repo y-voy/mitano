@@ -9,7 +9,7 @@
     <%  if user.image && user.image.url %>
     <td><%= image_tag user.image.url, class: "article_icon_image" %></td>
     <% else %>
-    <td><%= image src=default_url, class: "article_icon_image" %></td>
+    <td><%= image_tag "default.png", class: "article_icon_image" %></td>
     <% end %>
     <td><%= user.name %></td>
     <td><%= user.email %></td>
