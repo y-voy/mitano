@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     resources :articles, only: [:index], controller: 'users/articles'
   end
+  resources :users, only: [:index] do
+    resource :followings, only: [:create, :destroy]
+  end
   root 'articles#index'
   resources :articles do
     collection do

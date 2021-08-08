@@ -1,38 +1,49 @@
 <div class="card" style="width: 100rem;">
   <div class="card-body">
-    <%  if article.user.image && article.user.image.url %>
-    <a><%= image_tag article.user.image.url, class: "article_icon_image" %></a>
-    <% else %>
-    <a><%= image_tag "default.png", class: "article_icon_image" %></a>
-    <% end %>
-    <a><%= article.user.name %></a>
-    <h5 class="card-title"><%= markdown(article.title)%></h5>
-    <p class="card-text"><%= markdown(article.content).truncate(80) %></p>
+    <div class="article_first_line">
+      <% if article.user.image && article.user.image.url %>
+      <a><%= image_tag article.user.image.url, class: "article_icon_image" %></a>
+      <% else %>
+      <a><%= image_tag "default.png", class: "article_icon_image" %></a>
+      <% end %>
+      <a class='article_user_name'><%= article.user.name %></a>
+      <% if user_signed_in? %>
+        <% unless article.user_id == current_user.id %>
+        <% user = article.user %>
+          <% unless current_user.following?(user) %>
+            <i class="glyphicon glyphicon-link follow-btn"></i>
+          <% else %>
+            <i class="glyphicon glyphicon-link unfollow-btn"></i>
+          <% end %>
+        <% if article.like?(current_user) %>
+          <a class='like-btn-tag'><%= link_to '', like_path(id: article.like(current_user).id), method: :delete, class: "glyphicon glyphicon-heart unlike-btn" %></a>
+        <% else %>
+          <a class='like-btn-tag'><%= link_to '', likes_path(article_id: article.id), method: :post, class: "glyphicon glyphicon-heart-empty like-btn" %></a>
+        <% end %>
+        <% else %>
+        <div class="edit-delete-btn">
+        <%= link_to "", edit_article_path(article.id), class: "glyphicon glyphicon-pencil edit-icon" %>
+        <%= link_to "", article_path(article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') }, class: "glyphicon glyphicon-trash delete-icon" %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+      <h5><b><%= link_to markdown(article.title), article_path(article.id), class: "card-title" %></b></h5>
     <% article.tags.each do |tag| %>
-    <a>#<%= link_to tag.name, tag_articles_path(tag_id: tag.id), class: "card-subtitle mb-2 text-muted" %></a>
+    <a class="tag-name">#<%= link_to tag.name, tag_articles_path(tag_id: tag.id), class: "card-subtitle mb-2 text-muted" %></a>
     <% end %>
-    <a><%= article.likes.count %></a>
-    <a><%= article.impressions_count %></a>
-    <a class="card-link"><%= link_to t('view.to_article_show_view'), article_path(article.id) %></a>
+    <div class="article_bottom_line">
+    <a class="likes-count"><i class="glyphicon glyphicon-heart likes-count-icon"></i><%= article.likes.count %></a>
+    <a class="impressions-count"><i class="glyphicon glyphicon-eye-open impressions-count-icon"></i><%= article.impressions_count %></a>
     <% if user_signed_in? %>
-      <% if article.user_id == current_user.id %>
-        <%= link_to t('view.to_article_edit_view'), edit_article_path(article.id) %>
-        <%= link_to t('view.to_article_destroy_view'), article_path(article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') } %>
-      <% end %>
       <% unless article.user_id == current_user.id %>
-      <% user = article.user %>
-      <a><%= render 'users/follow_form', user: user %></a>
-          <% if article.like?(current_user) %>
-            <a><%= link_to t('action.undo_like'), like_path(id: article.like(current_user).id), method: :delete %></a>
-          <% else %>
-            <a><%= link_to t('action.do_like'), likes_path(article_id: article.id), method: :post %></a>
-          <% end %>
           <% if article.stock?(current_user) %>
-            <a><%= link_to t('action.undo_stock'), stock_path(id: article.stock(current_user).id), method: :delete %></a>
+            <a class='stock-btn-tag'><%= link_to t('action.undo_stock'), stock_path(id: article.stock(current_user).id), method: :delete, class: "btn btn-stock-undo btn-sm" %></a>
           <% else %>
-            <a><%= link_to t('action.do_stock'), stocks_path(article_id: article.id), method: :post %></a>
+            <a class='stock-btn-tag'><%= link_to t('action.do_stock'), stocks_path(article_id: article.id), method: :post, class: "btn btn-stock btn-sm" %></a>
           <% end %>
       <% end %>
     <% end %>
+    </div>
   </div>
 </div>

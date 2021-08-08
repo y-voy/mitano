@@ -8,12 +8,14 @@ class FollowingsController < ApplicationController
 
   respond_to? :js
   def create
-    @user = User.find(params[:following][:followed_id])
-    current_user.follow!(@user)
+    # @user = User.find(params[:following][:followed_id])
+    current_user.follow!(params[:user_id])
+    redirect_to articles_path
   end
 
   def destroy
-    @user = Following.find(params[:id]).followed
-    current_user.unfollow!(@user)
+    # @user = Following.find(params[:id]).followed
+    current_user.unfollow!(params[:user_id])
+    redirect_to articles_path
   end
 end
