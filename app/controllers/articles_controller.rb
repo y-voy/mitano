@@ -6,9 +6,9 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:article].present?
-      @articles = Article.where('title LIKE ?', "%#{params[:article][:content]}%").or(Article.where('content LIKE ?', "%#{params[:article][:content]}%")).includes([:likes, :stocks, :tags])
+      @articles = Article.where('title LIKE ?', "%#{params[:article][:content]}%").or(Article.where('content LIKE ?', "%#{params[:article][:content]}%")).includes([:likes, :stocks, :tags]).order("created_at DESC")
     else
-      @articles = Article.all.includes([:likes, :stocks])
+      @articles = Article.all.includes([:likes, :stocks]).order("created_at DESC")
     end
   end
 
