@@ -52,3 +52,18 @@ body {
   border-radius: 20px;
   object-fit: cover;
 }
+
+.footer {
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  height: 45px;
+  background-color: #946c45;
+}
+
+.footer-text {
+  color: #ffffff;
+}
