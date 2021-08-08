@@ -2,17 +2,9 @@
 <div class="search_flame">
   <div class="input-group">
     <%= f.text_field :content, class: "form-control", id: "name_search_feild", placeholder: "検索する" %>
+    <%= f.submit "検索", class: "btn btn-default search_btn", id: "name_search_btn" %>
   </div>
-  <%= f.submit "検索する", class: "btn btn-default search_btn", id: "search_btn" %>
   <% end %>
 </div>
-
 <h1><%= t('view.article_index_view') %></h1>
-<table>
-  <tr>
-    <th><%= t('activerecord.attributes.user.name') %></th>
-    <th><%= t('activerecord.attributes.article.title') %></th>
-    <th><%= t('activerecord.attributes.article.content') %></th>
-  </tr>
   <%= render @articles %>
-</table>
