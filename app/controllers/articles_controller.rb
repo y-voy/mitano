@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :confirm, :edit, :update, :destroy]
-  impressionist :actions=>[:show]
+  # impressionist :actions=>[:show]
 
   def index
     if params[:article].present?
@@ -39,6 +39,7 @@ class ArticlesController < ApplicationController
     @stock = current_user.stocks.find_by(article_id: @article.id) if user_signed_in?
     @comment = Comment.new
     @comments = @article.comments.order(created_at: :desc)
+    impressionist(@article, nil, unique: [:ip_address])
   end
 
   def edit

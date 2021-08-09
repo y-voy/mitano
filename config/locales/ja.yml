@@ -227,6 +227,7 @@ ja:
     logout: ログアウト
     login: ログイン
     sign_up: サインアップ
+    article_new: 投稿
     article_index_view: 記事一覧
     article_new_view: 新規投稿
     article_show_view: 記事詳細
@@ -247,3 +248,5 @@ ja:
     like_index_view: いいねランキング
     to_like_index_view: いいねランキング
     impressions_ranking_view: 閲覧数ランキング
+    user_profile_edit_view: プロフィール編集
+    to_admin_view: 管理者画面へ

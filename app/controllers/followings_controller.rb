@@ -10,12 +10,12 @@ class FollowingsController < ApplicationController
   def create
     # @user = User.find(params[:following][:followed_id])
     current_user.follow!(params[:user_id])
-    redirect_to articles_path
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
     # @user = Following.find(params[:id]).followed
     current_user.unfollow!(params[:user_id])
-    redirect_to articles_path
+    redirect_back(fallback_location: root_path)
   end
 end

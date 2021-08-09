@@ -40,15 +40,19 @@
             <li><a><%= link_to t('view.to_following_index_view'), followings_path %></a></li>
             <li><a><%= link_to t('view.to_like_index_view'), likes_path %></a></li>
             <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path %></a></li>
+            <% if current_user.admin? %>
             <li role="separator" class="divider"></li>
-            <li><a><%= link_to current_user.name, edit_user_registration_path %></a></li>
+            <li><a><%= link_to t('view.to_admin_view'), rails_admin_path %></a></li>
+            <% end %>
+            <li role="separator" class="divider"></li>
+            <li><a><%= link_to t('view.user_profile_edit_view'), edit_user_registration_path %></a></li>
             <li><a><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></a></li>
           </ul>
         </li>
         <!-- ログイン時 -->
         <% else %>
         <!-- ログアウト時 -->
-        <li><a><%= link_to t('view.login'), new_user_session_path %></a></li>
+        <li><a class="new_user_session"><%= link_to t('view.login'), new_user_session_path, class: "btn btn-new-user-session btn-sm" %></a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "default.png", class: "icon_image" %>
@@ -67,7 +71,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 </div>
-    <div class="container">
+<main>
+    <div class="container page">
     <!-- <div class="row"> -->
       <div class="col-md-8 col-md-offset-2">
       <% if notice %>
@@ -78,12 +83,14 @@
       <% end %>
       <%= yield %>
       </div>
+      </div>
     <!-- </div> -->
-    </div>
+  </main>
     <footer class="footer">
-    <div class="container-fluid">
+    <div class="container">
       <p class="text-muted footer-text">Copyright 2021 Yuji Moriya All Rights Reserved.</p>
     </div>
   </footer>
+
   </body>
 </html>
