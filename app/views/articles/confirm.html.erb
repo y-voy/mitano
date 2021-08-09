@@ -1,13 +1,28 @@
 <h3><%= t('view.article_confirm_view') %></h3>
-<%= form_with(model: @article, local: true) do |form| %>
-  <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>
-  <p><%= t('activerecord.attributes.article.title') %>:<%= markdown(@article.title) %></p>
-  <p><%= t('activerecord.attributes.article.content') %>:<%= markdown(@article.content) %></p>
+<div class="card-body-confirm">
+  <div class="article_first_line">
+    <% if @article.user.image && @article.user.image.url %>
+    <a><%= image_tag @article.user.image.url, class: "article_icon_image" %></a>
+    <% else %>
+    <a><%= image_tag "default.png", class: "article_icon_image" %></a>
+    <% end %>
+    <a class='article_user_name'><%= @article.user.name %></a>
+  </div>
+  <%= form_with(model: @article, local: true) do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+  <br>
+  <b class="article-title-confirm"><%= markdown(@article.title) %></b>
   <% @article.tags.each do |tag| %>
   <%= form.hidden_field :tag_ids, value: tag.id, multiple: true %>
-    <p><%= tag.name %></p>
+  <a class="tag-name">#<%= tag.name %></a>
   <% end %>
-  <%= form.submit t('submit.article_submit')%>
-  <%= form.submit t('submit.article_back'), name: 'back'%>
-<% end %>
+  <div class="article_bottom_line">
+  </div>
+  <p><%= markdown(@article.content) %></p>
+  <div class="new-article-register-btn">
+  <%= form.submit t('view.article_new'), class: "btn-new-article-confirm-register btn-sm"%>
+  <%= form.submit t('submit.article_back'), name: 'back', class: "btn-new-article-back"%>
+  <% end %>
+  </div>
+</div>

@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+// index
+
 a:hover {
   text-decoration: none;
 }
@@ -85,6 +88,11 @@ a:hover {
   font-size: 20px;
 }
 
+.card-title-show {
+  color: #000000;
+  font-size: 25px;
+}
+
  .tag-name {
    color: #808080;
  }
@@ -159,3 +167,60 @@ a:hover {
 .stock-btn-tag {
    margin-left: auto;
   }
+
+// _form
+
+.article_title_textfeild {
+  width: 730px;
+  height: 35px;
+}
+
+.tag_label {
+  margin-top: 10px;
+}
+
+.tag_label_name {
+  margin-right: 10px;
+}
+
+.article_content {
+  margin-top: 10px;
+}
+
+.article_content_textarea {
+  width: 730px;
+  height: 400px;
+}
+
+.new-article-register-btn {
+  display: flex;
+}
+.btn-new-article-register {
+  color: #ffffff;
+  font-size: 15px;
+  background-color: #8f6552;
+  border: 1px solid #8f6552;
+  margin-left: auto;
+}
+
+// confirm
+.article-title-confirm {
+  font-size: 25px;
+}
+
+.btn-new-article-confirm-register {
+  color: #ffffff;
+  font-size: 15px;
+  background-color: #8f6552;
+  border: 1px solid #8f6552;
+  margin-top: 50px;
+  margin-left: auto;
+}
+
+.btn-new-article-back {
+  color: #8f6552;
+  font-size: 15px;
+  background-color: #ffffff;
+  border: 1px solid #8f6552;
+  margin: 50px 20px 0 15px;
+}

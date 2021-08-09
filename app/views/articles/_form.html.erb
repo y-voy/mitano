@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="article_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="article_content">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_field :title, class: "article_title_textfeild", placeholder: t('activerecord.attributes.article.title') %>
   </div>
 
-  <div class="input task_label">
+  <div class="input tag_label">
     <% Tag.all.each do |tag| %>
-    <%= form.check_box :tag_ids, { multiple: true, checked: tag[:checked], disabled: tag[:disabled], include_hidden: false }, tag[:id], class: "input-form", id: "task_label_field" %>
-    <label><%= tag.name %></label>
+    <%= form.check_box :tag_ids, { multiple: true, checked: tag[:checked], disabled: tag[:disabled], include_hidden: false }, tag[:id], class: "input-form", id: "tag_label_field" %>
+    <label class="tag_label_name"><%= tag.name %></label>
     <% end %>
   </div>
 
-  <%= form.submit %>
+  <div class="article_content">
+    <%= form.text_area :content, class: "article_content_textarea", placeholder: t('activerecord.attributes.article.content')  %>
+  </div>
+  <div class="new-article-register-btn">
+  <%= form.submit t('view.article_new'), class: "btn-new-article-register btn-sm" %>
+  </div>
 <% end %>

@@ -7,12 +7,14 @@ class StocksController < ApplicationController
 
   def create
     stock = current_user.stocks.create(article_id: params[:article_id])
-    redirect_to articles_url, notice: "#{stock.article.user.name}さんの投稿をストックしました"
+    flash[:notice] = "#{stock.article.user.name}さんの投稿をストックしました"
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
     stock = current_user.stocks.find_by(id: params[:id]).destroy
-    redirect_to articles_url, notice: "#{stock.article.user.name}さんの投稿のストックを解除しました"
+    flash[:notice] = "#{stock.article.user.name}さんの投稿のストックを解除しました"
+    redirect_back(fallback_location: root_path)
   end
 
 end
