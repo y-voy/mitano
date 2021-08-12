@@ -252,3 +252,4 @@ ja:
     to_admin_view: 管理者画面へ
     sign_up_register: 登録
     need_cuurent_password: 変更の際は現在のパスワードを入力
+    to_following_user_index_view: 記事をみる

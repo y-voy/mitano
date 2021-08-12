@@ -1,19 +1,17 @@
 <h2><%= t('view.following_index_view') %></h2>
 <table>
-  <tr>
-    <th><%= t('activerecord.attributes.user.name') %></th>
-    <th><%= t('activerecord.attributes.user.email') %></th>
-  </tr>
   <% @users.each do |user| %>
-  <tr>
+      <div class="following_user_view">
+        <tr>
     <%  if user.image && user.image.url %>
     <td><%= image_tag user.image.url, class: "article_icon_image" %></td>
     <% else %>
     <td><%= image_tag "default.png", class: "article_icon_image" %></td>
     <% end %>
-    <td><%= user.name %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to "記事一覧", user_articles_path(user_id: user.id) %></td>
-  </tr>
+    <td><span class="following_user_name"><%= user.name %></span></td>
+    <td><span class="following_user_email"><%= user.email %></span></td>
+    <td><%= link_to t('view.to_following_user_index_view'), user_articles_path(user_id: user.id), class: "btn_following_user_index" %></td>
+        </tr>
+      </div>
   <% end %>
-</table>
+  </table>
