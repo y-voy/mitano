@@ -15,6 +15,13 @@
           <% else %>
             <i class="glyphicon glyphicon-link unfollow-btn"></i>
           <% end %>
+        <% end %>
+      <% end %>
+          <div class="article-created">
+            <i><%= article.created_at.strftime('%Y-%m-%d %H:%M') %>に投稿</i>
+          </div>
+      <% if user_signed_in? %>
+        <% unless article.user_id == current_user.id %>
         <% if article.like?(current_user) %>
           <a class='like-btn-tag'><%= link_to '', like_path(id: article.like(current_user).id), method: :delete, class: "glyphicon glyphicon-heart unlike-btn" %></a>
         <% else %>
