@@ -3,7 +3,7 @@ class FollowingsController < ApplicationController
 
   def index
     users = Following.where(follower_id: current_user.id).pluck(:followed_id)
-    @users = User.find(users)
+    @users = Kaminari.paginate_array(User.find(users)).page(params[:page]).per(20)
   end
 
   respond_to? :js

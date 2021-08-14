@@ -1,2 +1,3 @@
 <h1><%= t('view.impressions_ranking_view') %></h1>
   <%= render partial: 'articles/article', collection: @articles %>
+<%= paginate @articles %>
