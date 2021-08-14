@@ -6,7 +6,7 @@
       <% else %>
       <a><%= image_tag "default.png", class: "article_icon_image" %></a>
       <% end %>
-      <a class='article_user_name'><%= article.user.name %></a>
+      <a class='article_user_name'><%= article.user.name.truncate(40) %></a>
       <% if user_signed_in? %>
         <% unless article.user_id == current_user.id %>
         <% user = article.user %>
@@ -35,7 +35,7 @@
         <% end %>
       <% end %>
     </div>
-      <h5><b><%= link_to markdown(article.title), article_path(article.id), class: "card-title" %></b></h5>
+      <h5><b><%= link_to markdown(article.title.truncate(35)), article_path(article.id), class: "card-title" %></b></h5>
     <% article.tags.each do |tag| %>
     <a class="tag-name">#<%= link_to tag.name, tag_articles_path(tag_id: tag.id), class: "card-subtitle mb-2 text-muted" %></a>
     <% end %>
