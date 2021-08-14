@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
 
   def index
-    @articles = Article.joins(:likes).group(:id).order("count(*) desc")
+    @articles = Kaminari.paginate_array(Article.joins(:likes).group(:id).order("count(*) desc")).page(params[:page]).per(10)
   end
 
   def create

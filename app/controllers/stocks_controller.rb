@@ -2,7 +2,7 @@ class StocksController < ApplicationController
 
   def index
     stocks = Stock.where(user_id: current_user.id).pluck(:article_id)
-    @articles = Article.find(stocks)
+    @articles = Kaminari.paginate_array(Article.find(stocks)).page(params[:page]).per(5)
   end
 
   def create

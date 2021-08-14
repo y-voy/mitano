@@ -86,9 +86,23 @@ body {
   object-fit: cover;
 }
 
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.pagination>.active>a {
+  background: #e8c59c;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+  background: #f6e5cc;
+}
+
 .footer {
   display: flex;
-  /* position: fixed; */
   margin-top: auto;
   align-items: center;
   bottom: 0;
