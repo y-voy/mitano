@@ -5,13 +5,13 @@ class CommentsController < ApplicationController
     @comment = @article.comments.build(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    render :index
+    redirect_to request.referer
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    render :index
+    redirect_to request.referer
   end
 
   private
