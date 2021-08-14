@@ -1,5 +1,3 @@
-<h1><%= t('view.article_show_view') %></h1><%= link_to t('view.to_aticle_index_view'), articles_path %>
-
 <div class="card-body">
   <div class="article_first_line">
     <% if @article.user.image && @article.user.image.url %>
@@ -56,10 +54,9 @@
     <p><%= markdown(@article.content) %></p>
   </div>
 
-  <h4 class="text-left title"><%= t('view.comment_index_view') %></h4>
+  <div class="comment-entry">
   <% @comments.each do |comment| %>
     <% unless comment.id.nil? %>
-      <div class="comment-entry">
         <div class="comment-first-line">
         <% if comment.user.image &&comment.user.image.url %>
           <a><%= image_tag comment.user.image.url, class: "article_icon_image" %></a>
@@ -80,10 +77,10 @@
       <% end %>
   <% end %>
 <% end %>
+<div class="comment-create">
 <% if user_signed_in? %>
-  <div class="comment-create">
     <%= form_with(model: [@article, @comment] ) do |f| %>
-    <%= f.text_area :content, class: "post-commment-area" %>
+    <%= f.text_area :content, class: "post-commment-area", placeholder: t('view.post_comment') %>
     <div class="comment-submit">
     <%= f.submit t('submit.comment_submit'), class: "btn btn-outline-dark btn-comment-submit float-right" %>
     </div>
