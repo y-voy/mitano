@@ -255,3 +255,4 @@ ja:
     need_cuurent_password: 変更の際は現在のパスワードを入力
     to_following_user_index_view: 記事をみる
     guest_sign_in: ゲストログイン
+    sign_in_as_guest: ゲストユーザーとしてログインしました。
