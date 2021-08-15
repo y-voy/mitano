@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     resources :articles, only: [:index], controller: 'users/articles'
   end
+  devise_scope :user do
+   post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   resources :users, only: [:index] do
     resource :followings, only: [:create, :destroy]
   end

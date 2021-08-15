@@ -32,4 +32,12 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: user_id).destroy
   end
 
+  def self.guest
+  find_or_create_by!(email: 'aaa@aaa.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    user.password_confirmation = user.password
+    user.name = 'aaa'
+    end
+  end
+
 end
