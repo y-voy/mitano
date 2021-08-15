@@ -12,4 +12,8 @@ FactoryBot.define do
     name { "tag_b" }
   end
 
+  factory :tag_foo, class: Tag do
+    name { "foo" }
+  end
+
 end
