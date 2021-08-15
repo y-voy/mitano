@@ -18,7 +18,9 @@
 
   <div class="input tag_label">
     <% Tag.all.each do |tag| %>
+    <span class="tag_label_checkbox">
     <%= form.check_box :tag_ids, { multiple: true, checked: tag[:checked], disabled: tag[:disabled], include_hidden: false }, tag[:id], class: "input-form", id: "tag_label_field" %>
+    </span>
     <label class="tag_label_name"><%= tag.name %></label>
     <% end %>
   </div>

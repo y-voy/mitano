@@ -25,7 +25,7 @@
         <% else %>
           <div class="edit-delete-btn">
             <%= link_to "", edit_article_path(@article.id), class: "glyphicon glyphicon-pencil edit-icon" %>
-            <%= link_to "", article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') }, class: "glyphicon glyphicon-trash delete-icon" %>
+            <%= link_to "", article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') }, class: "glyphicon glyphicon-trash delete-icon", id: "delete_button" %>
           </div>
         <% end %>
       <% end %>
