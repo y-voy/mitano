@@ -73,6 +73,7 @@
             <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path %></a></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to t('view.guest_sign_in'), users_guest_sign_in_path, method: :post, class: "login" %></li>
+            <li><%= link_to t('view.guest_admin_sign_in'), users_guest_admin_sign_in_path, method: :post, class: "login" %></li>
             <li role="separator" class="divider"></li>
             <li><a><%= link_to t('view.sign_up'), new_user_registration_path %></a></li>
           </ul>
