@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe '機能', type: :system do
+RSpec.describe 'タグ機能', type: :system do
 
   let!(:user) { FactoryBot.create(:user, name: "user_a", email: "user_a@dic.com") }
   let!(:user_foo) { FactoryBot.create(:user, name: "user_foo", email: "user_foo@dic.com") }
