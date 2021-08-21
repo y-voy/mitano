@@ -6,12 +6,12 @@
 
     <div class="field">
       <%= f.label :name %><br />
-      <p><%= f.text_field :name, class: "sign_up_field" %></p>
+      <p><%= f.text_field :name, class: "sign_up_field", placeholder: "山田　太郎" %></p>
     </div>
 
     <div class="field">
       <%= f.label :email %><br />
-      <p><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "sign_up_field" %></p>
+      <p><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "sign_up_field", placeholder: "abc@def.com" %></p>
     </div>
 
     <div class="field">

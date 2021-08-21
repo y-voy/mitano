@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="article_title">
-    <%= form.text_field :title, class: "article_title_textfeild", placeholder: t('activerecord.attributes.article.title') %>
+    <%= form.text_field :title, class: "article_title_textfeild", placeholder: "タイトルを入力してください" %>
   </div>
 
   <div class="input tag_label">
@@ -26,7 +26,7 @@
   </div>
 
   <div class="article_content">
-    <%= form.text_area :content, class: "article_content_textarea", placeholder: t('activerecord.attributes.article.content')  %>
+    <%= form.text_area :content, class: "article_content_textarea", placeholder: "内容を入力してください（マークダウン記法対応）"  %>
   </div>
   <div class="new-article-register-btn">
   <%= form.submit t('view.article_new'), class: "btn-new-article-register btn-sm" %>
