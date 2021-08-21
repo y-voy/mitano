@@ -116,3 +116,25 @@ body {
 .footer-text {
   color: #ffffff;
 }
+
+.tops-body {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.tops-main-title {
+  margin: 20px 0;
+}
+
+.tops-title {
+  margin: 30px 0 20px 0;
+}
+
+.tops-content {
+  font-size: 15px;
+}
+
+.panel-default {
+  padding: 20px 0;
+  border-radius: 30px;
+}
