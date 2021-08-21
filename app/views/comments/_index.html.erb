@@ -15,7 +15,7 @@
                   </span>
                     <%= comment.content %>
                     <% if comment.user == current_user %>
-                        <%= link_to article_comment_path(comment.article_id, comment.id), method: :delete, remote: true, class: "glyphicon glyphicon-trash delete-icon" do %>
+                        <%= link_to article_comment_path(comment.article_id, comment.id), method: :delete, class: "glyphicon glyphicon-trash delete-icon" do %>
                         <% end %>
                     <% end %>
                 </div>
