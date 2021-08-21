@@ -1,23 +1,31 @@
 <div class="tops-body">
-<h2 class="tops-main-title">ようこそ、Mitanoへ！</h2>
-<h4>Mitanoはビジネスに関する知識を共有・蓄積するためのツールです</h4>
+  <div class="tops-body-main">
+    <h2 class="tops-main-title">ようこそ、Mitanoへ！</h2>
+    <h4>Mitanoは<b>ビジネスに関する知識を共有・蓄積するためのツール</b>です</h4>
+  </div>
 
-<h4 class="tops-title alert alert-warning">「Mitano見たの？」分からないことはまず「Mitano」で調べましょう</h4>
-<div class="tops-content panel panel-default">
-  <p>Mitanoにはビジネスの現場における生の声が数多く共有されております</p>
-  <p>「経営戦略を作れと言われたけどどう詰めていけば良いのか分からない・・・」</p>
-  <p>「マーケティング施策は色々考えたがどこから着手すべきか・・・」</p>
+<h4 class="tops-title glyphicon glyphicon-ok"><b> 「Mitano見たの？」分からないことはまず「Mitano」で調べましょう！</b></h4>
+<div class="tops-content">
+  <p>Mitanoにはビジネスの現場における生の声が数多く共有されております。</p>
+  <p><i>「経営戦略を作れと言われたけどどう詰めていけば良いのか分からない・・・」</i></p>
+  <p><i>「マーケティング施策は色々考えたがどこから着手すべきか・・・」</i></p>
   <p>そんな悩めるビジネスパーソンの考える「プロセス」において</p>
-  <p>Mitanoは少しでも解決のお手伝いしたいと考えております</p>
+  <p>Mitanoは少しでも解決のお手伝いしたいと考えております。</p>
 </div>
 
-<h4 class="tops-title alert alert-warning">「Mitano見ました？」ご自身のアピールに「Mitano」を使いましょう</h4>
-<div class="tops-content panel panel-default">
-  <p>Mitanoではご自身の知識を共有することができます</p>
+<h4 class="tops-title glyphicon glyphicon-ok"><b> 「Mitano見ました？」ご自身のアピールに「Mitano」を使いましょう！</b></h4>
+<div class="tops-content">
+  <p>Mitanoではご自身の知識を共有することができます。</p>
   <p>積み上げてきた成果だけでなくどのように考えて実行したか</p>
-  <p>考える「プロセス」を共有することでアピールに使うことができます</p>
-  <p>またMitanoでアウトプットすることで自身の振り返りや仲間とのディスカッションもできます</p>
-  <p>Mitanoは少しでもスキルアップやステップアップのお手伝いをしたいと考えております</p>
+  <p>考える「プロセス」を共有することでアピールに使うことができます。</p>
+  <p>またMitanoでアウトプットすることで自身の振り返りや仲間とのディスカッションもできます。</p>
+  <p>Mitanoは少しでもスキルアップやステップアップのお手伝いをしたいと考えております。</p>
+</div>
+
+<div class="tops-footer">
+  <a><%= link_to t('view.guide_index_view'), guides_path, class: "btn btn-guide" %></a>
+  <p class="guest_login_btn"><%= link_to t('view.guest_sign_in'), users_guest_sign_in_path, method: :post, class: "login" %></p>
+  <p><%= link_to t('view.guest_admin_sign_in'), users_guest_admin_sign_in_path, method: :post, class: "login" %></p>
 </div>
 
 </div>

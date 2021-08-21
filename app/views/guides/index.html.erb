@@ -1,0 +1,54 @@
+<div class="guides-body">
+<h2 class="guides-main-title">Mitanoの使い方</h2>
+
+<h4 class="guides-title glyphicon glyphicon-ok"><b> アカウント登録をしましょう！</b></h4>
+<div class="guides-content">
+  <p>画面右上の <%= image_tag "default.png", class: "guide_icon_image" %> アイコンから「アカウント登録」ができます。</p>
+  <p>アカウント登録をしてログインすると、記事の投稿やストック、お気に入りユーザーの登録など</p>
+  <p>mitanoの全ての機能が使えるようになります。もれなく登録しましょう！</p>
+</div>
+
+<h4 class="guides-title glyphicon glyphicon-ok"><b> 記事を投稿しましょう！</b></h4>
+<div class="guides-content">
+  <p>ログイン後、画面右上の <button class="btn btn-new-article btn-sm"><%= t('view.to_article_new_view') %></button> から記事の投稿ができます。</p>
+  <p>内容が伝わりやすいようにタイトルを工夫してつけましょう。マークダウン記法にも対応してます！</p>
+</div>
+
+<h4 class="guides-title glyphicon glyphicon-ok"><b> 記事を確認してみましょう！</b></h4>
+<div class="guides-content">
+  <p>記事一覧のタイトルをクリックすると記事の詳細画面に移行します。</p>
+  <p>詳細画面からコメントの投稿もできます。投稿者への質問や意見を伝えてみてください。</p>
+  <p></p>
+</div>
+
+<h4 class="guides-title glyphicon glyphicon-ok"><b> 記事をストックしましょう！</b></h4>
+<div class="guides-content">
+  <p>記事一覧の <button class="btn guide-btn-stock btn-sm"><%= t('action.do_stock') %></button> から記事のストックができます。後からみたい記事をストックすることで、</p>
+  <p>画面右上の <%= image_tag "default.png", class: "guide_icon_image" %> アイコンから
+    「ストック一覧」をチェックすることができます！</p>
+</div>
+
+<h4 class="guides-title glyphicon glyphicon-ok"><b> お気に入りユーザーを登録しましょう！</b></h4>
+<div class="guides-content">
+  <p>記事詳細画面から <i class="glyphicon glyphicon-link follow-btn"></i> を押すとお気に入りユーザーの登録ができます。登録したユーザーの記事一覧を、</p>
+  <p>画面右上の <%= image_tag "default.png", class: "guide_icon_image" %> アイコンの
+    「お気に入りユーザ一覧」からチェックすることができます！</p>
+</div>
+
+<h4 class="guides-title glyphicon glyphicon-ok"><b> 記事に「いいね」をしてみましょう！</b></h4>
+<div class="guides-content">
+  <p>記事一覧の <i class="glyphicon glyphicon-heart-empty guide-like-btn"></i> を押すと投稿者に「いいね」を送ることができます。</p>
+  <p>「いいね」が送られた数も <i class="glyphicon glyphicon-heart guide-likes-count-icon"></i> アイコンから確認ができます。</p>
+  <p>画面右上の <%= image_tag "default.png", class: "guide_icon_image" %> アイコンから「いいねランキング」もチェックしてみてください！</p>
+</div>
+
+<h4 class="guides-title glyphicon glyphicon-ok"><b> 閲覧数ランキングをみてみよう！</b></h4>
+<div class="guides-content">
+  <p>画面右上の <%= image_tag "default.png", class: "guide_icon_image" %> アイコンから「閲覧数ランキング」をチェックしてみてください。</p>
+  <p>どの記事がよく見られているかがひと目で分かります！</p>
+</div>
+
+<div class="guides-footer">
+  <a><%= link_to t('view.go_to_article_index_view'), articles_path, class: "btn btn-guide" %></a>
+</div>
+</div>
