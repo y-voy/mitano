@@ -47,6 +47,8 @@
             <% end %>
           </a>
           <ul class="dropdown-menu">
+            <li><a><%= link_to t('view.top_index_view'), tops_path %></a></li>
+            <li role="separator" class="divider"></li>
             <li><a><%= link_to t('view.stock_index_view'), stocks_path %></a></li>
             <li><a><%= link_to t('view.to_following_index_view'), followings_path %></a></li>
             <li><a><%= link_to t('view.to_like_index_view'), likes_path %></a></li>
@@ -69,6 +71,8 @@
             <%= image_tag "default.png", class: "icon_image" %>
           </a>
           <ul class="dropdown-menu">
+            <li><a><%= link_to t('view.top_index_view'), tops_path %></a></li>
+            <li role="separator" class="divider"></li>
             <li><a><%= link_to t('view.to_like_index_view'), likes_path %></a></li>
             <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path %></a></li>
             <li role="separator" class="divider"></li>

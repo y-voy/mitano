@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'articles#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :users, only: [:index] do
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     resource :followings, only: [:create, :destroy]
   end
-  root 'articles#index'
   resources :articles do
     collection do
       post :confirm
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :likes, only: [:index, :create, :destroy]
   resources :stocks, only: [:index, :create, :destroy]
   resources :followings, only: [:index, :create, :destroy]
+  resources :tops, only: [:index]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
