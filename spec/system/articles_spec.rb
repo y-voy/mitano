@@ -24,8 +24,8 @@ RSpec.describe '記事機能', type: :system do
   describe '新規作成機能' do
     before do
       visit new_article_path
-      fill_in 'タイトル', with: "newpost"
-      fill_in '内容', with: "newcontent"
+      fill_in "タイトルを入力してください", with: "newpost"
+      fill_in "内容を入力してください（マークダウン記法対応）", with: "newcontent"
       first(".tag_label_checkbox").check
       click_button '投稿'
       click_button '投稿'
@@ -67,7 +67,7 @@ RSpec.describe '記事機能', type: :system do
     before do
       visit article_path(article)
       find(".edit-icon").click
-      fill_in 'タイトル', with: "edit_title"
+      fill_in "タイトルを入力してください", with: "edit_title"
       click_button '投稿'
     end
      context '記事の編集をした場合' do

@@ -24,8 +24,8 @@ RSpec.describe 'タグ機能', type: :system do
     end
     before do
       visit new_article_path
-      fill_in 'タイトル', with: "newpost"
-      fill_in '内容', with: "newcontent"
+      fill_in "タイトルを入力してください", with: "newpost"
+      fill_in "内容を入力してください（マークダウン記法対応）", with: "newcontent"
       first(".tag_label_checkbox").check
       click_button '投稿'
       click_button '投稿'
