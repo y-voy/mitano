@@ -1,7 +1,7 @@
 <div id="follow_form_<%= user.id %>">
   <% unless current_user.following?(user) %>
-    <%= link_to "", user_followings_path(user.id), method: :post, class: "glyphicon glyphicon-link follow-btn" %>
+    <%= link_to "", user_followings_path(user.id), method: :post, class: "glyphicon glyphicon-link follow-btn", title: "お気に入りユーザー登録" %>
   <% else %>
-    <%= link_to "", user_followings_path(user.id), method: :delete, class: "glyphicon glyphicon-link unfollow-btn" %>
+    <%= link_to "", user_followings_path(user.id), method: :delete, class: "glyphicon glyphicon-link unfollow-btn", title: "お気に入りユーザー登録解除" %>
   <% end %>
 </div>

@@ -18,14 +18,14 @@
       <% if user_signed_in? %>
         <% unless @article.user_id == current_user.id %>
           <% if @article.like?(current_user) %>
-            <a class='like-btn-tag'><%= link_to '', like_path(id: @article.like(current_user).id), method: :delete, class: "glyphicon glyphicon-heart unlike-btn" %></a>
+            <a class='like-btn-tag'><%= link_to '', like_path(id: @article.like(current_user).id), method: :delete, class: "glyphicon glyphicon-heart unlike-btn", title: "いいねを解除する" %></a>
           <% else %>
-            <a class='like-btn-tag'><%= link_to '', likes_path(article_id: @article.id), method: :post, class: "glyphicon glyphicon-heart-empty like-btn" %></a>
+            <a class='like-btn-tag'><%= link_to '', likes_path(article_id: @article.id), method: :post, class: "glyphicon glyphicon-heart-empty like-btn", title: "いいねする" %></a>
           <% end %>
         <% else %>
           <div class="edit-delete-btn">
-            <%= link_to "", edit_article_path(@article.id), class: "glyphicon glyphicon-pencil edit-icon" %>
-            <%= link_to "", article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') }, class: "glyphicon glyphicon-trash delete-icon", id: "delete_button" %>
+            <%= link_to "", edit_article_path(@article.id), class: "glyphicon glyphicon-pencil edit-icon", title: "編集する" %>
+            <%= link_to "", article_path(@article.id), method: :delete, data: { confirm: t('notice.confirm_destroy') }, class: "glyphicon glyphicon-trash delete-icon", id: "delete_button", title: "削除する" %>
           </div>
         <% end %>
       <% end %>
@@ -38,9 +38,9 @@
     <% end %>
     <div class="article_bottom_line">
       <a class="likes-count">
-        <i class="glyphicon glyphicon-heart likes-count-icon"></i><%= @article.likes.count %></a>
+        <i class="glyphicon glyphicon-heart likes-count-icon" aria-hidden="true" title="いいねの数"></i><%= @article.likes.count %></a>
       <a class="impressions-count">
-        <i class="glyphicon glyphicon-eye-open impressions-count-icon"></i><%= @article.impressions_count %></a>
+        <i class="glyphicon glyphicon-eye-open impressions-count-icon" aria-hidden="true" title="閲覧数"></i><%= @article.impressions_count %></a>
       <% if user_signed_in? %>
         <% unless @article.user_id == current_user.id %>
           <% if @article.stock?(current_user) %>
