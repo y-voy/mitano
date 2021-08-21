@@ -226,7 +226,7 @@ ja:
   view:
     logout: ログアウト
     login: ログイン
-    sign_up: サインアップ
+    sign_up: アカウント登録
     article_new: 投稿
     article_index_view: 記事一覧
     article_new_view: 新規投稿
@@ -234,6 +234,7 @@ ja:
     article_edit_view: 記事編集
     article_confirm_view: 以下の内容で投稿する
     to_aticle_index_view: 記事一覧へ戻る
+    go_to_article_index_view: 記事一覧へ
     to_article_new_view: 投稿する
     to_article_show_view: 詳細
     to_article_edit_view: 編集
@@ -259,3 +260,4 @@ ja:
     sign_in_as_guest: ゲストユーザーとしてログインしました。
     sign_in_as_guest_admin: ゲスト管理者ユーザーとしてログインしました。
     top_index_view: Mitanoについて
+    guide_index_view: Mitanoの使い方
