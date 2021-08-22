@@ -21,6 +21,9 @@ body {
   flex-flow: column;
   min-height: 100vh;
 }
+main {
+  margin: 1%;
+}
 
 .navbar {
   background-color: #fffacd;
