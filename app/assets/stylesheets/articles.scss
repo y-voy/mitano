@@ -242,3 +242,23 @@ a:hover {
   border: 1px solid #8f6552;
   margin: 50px 20px 0 15px;
 }
+
+label {
+    margin-right: 5px; /* ボタン同士の間隔 */
+}
+
+#tag_label_field {
+    display: none; /* デフォルトのinputは非表示にする */
+}
+label span {
+    color: #333; /* 文字色を黒に */
+    font-size: 14px; /* 文字サイズを14pxに */
+    border: 1px solid #333; /* 淵の線を指定 */
+    border-radius: 20px; /* 角丸を入れて、左右が丸いボタンにする */
+    padding: 5px 20px; /* 上下左右に余白をトル */
+}
+label input:checked + span {
+    color: #FFF; /* 文字色を白に */
+    background: #FBB; /* 背景色を薄い赤に */
+    border: 1px solid #FBB; /* 淵の線を薄い赤に */
+}

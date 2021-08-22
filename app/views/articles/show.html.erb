@@ -56,6 +56,7 @@
 
   <div class="comment-entry">
   <% @comments.each do |comment| %>
+  <div class="comment-list">
     <% unless comment.id.nil? %>
         <div class="comment-first-line">
         <% if comment.user.image &&comment.user.image.url %>
@@ -72,10 +73,11 @@
         <% if comment.user == current_user %>
           <%= link_to article_comment_path(comment.article_id, comment.id), method: :delete, class: "glyphicon glyphicon-trash delete-icon comment-delete-icon" do %>
         <% end %>
-        </div>
-        <p><%= comment.content %></p>
       <% end %>
+      </div>
   <% end %>
+  <p><%= comment.content %></p>
+  </div>
 <% end %>
 <div class="comment-create">
 <% if user_signed_in? %>

@@ -50,9 +50,9 @@
             <li><a><%= link_to t('view.guide_index_view'), guides_path %></a></li>
             <li role="separator" class="divider"></li>
             <li><a><%= link_to t('view.stock_index_view'), stocks_path %></a></li>
-            <li><a><%= link_to t('view.to_following_index_view'), followings_path %></a></li>
-            <li><a><%= link_to t('view.to_like_index_view'), likes_path %></a></li>
-            <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path %></a></li>
+            <li><a><%= link_to t('view.to_following_index_view'), followings_path, class: "glyphicon glyphicon-link" %></a></li>
+            <li><a><%= link_to t('view.to_like_index_view'), likes_path, class: "glyphicon glyphicon-heart" %></a></li>
+            <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path, class: "glyphicon glyphicon-eye-open" %></a></li>
             <% if current_user.admin? %>
             <li role="separator" class="divider"></li>
             <li><a><%= link_to t('view.to_admin_view'), rails_admin_path %></a></li>
@@ -74,8 +74,8 @@
             <li><a><%= link_to t('view.top_index_view'), tops_path %></a></li>
             <li><a><%= link_to t('view.guide_index_view'), guides_path %></a></li>
             <li role="separator" class="divider"></li>
-            <li><a><%= link_to t('view.to_like_index_view'), likes_path %></a></li>
-            <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path %></a></li>
+            <li><a><%= link_to t('view.to_like_index_view'), likes_path, class: "glyphicon glyphicon-heart" %></a></li>
+            <li><a><%= link_to t('view.impressions_ranking_view'), impressions_path, class: "glyphicon glyphicon-eye-open" %></a></li>
             <li role="separator" class="divider"></li>
             <li><a><%= link_to t('view.sign_up'), new_user_registration_path %></a></li>
           </ul>
@@ -89,7 +89,7 @@
 </div>
 <main>
     <div class="container page">
-    <!-- <div class="row"> -->
+    <div class="row">
       <div class="col-md-8 col-md-offset-2">
       <% if notice %>
         <p class="alert alert-notice alert-warning"><%= notice %></p>
